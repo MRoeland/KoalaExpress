@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="2dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginRight="2dp"
+    android:layout_marginBottom="2dp"
+    android:backgroundTint="@color/items"
+    android:paddingLeft="3dp"
+    android:paddingRight="3dp"
+    app:cardCornerRadius="15dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tvVestigingTitel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Vestiging"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true" />
+        <Button
+            android:id="@+id/btnKiesVestiging"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#FFC107"
+            android:text="Kies Vestiging"
+            android:textColor="@color/black"
+            app:cornerRadius="20dp"
+            android:layout_alignParentEnd="true" />
+        <RelativeLayout
+            android:id="@+id/layoutAfhalen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/btnKiesVestiging">
+            <TextView
+                android:id="@+id/tvAfhalenInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Afhalen Of Bezorgen"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/tvVestigingNaam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Vestiging naam"
+                android:textStyle="bold"
+                android:layout_below="@id/tvAfhalenInfo"
+                />
+            <TextView
+                android:id="@+id/tvVestigingAdres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="Vestiging Adres"
+                android:layout_below="@id/tvVestigingNaam"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/layoutLevering"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/btnKiesVestiging">
+            <TextView
+                android:id="@+id/tvBezorgenInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Afhalen Of Bezorgen"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/tvLeveringsAdres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Klant Adres"
+                android:textStyle="bold"
+                android:layout_below="@id/tvBezorgenInfo"
+                />
+            <TextView
+                android:id="@+id/tvVerwachttijdstip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="Vestiging Adres"
+                android:layout_below="@id/tvLeveringsAdres"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

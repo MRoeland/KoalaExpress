@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/navigation_winkel">
+
+    <fragment
+        android:id="@+id/navigation_winkel"
+        android:name="be.ehb.koalaexpress.ui.Winkel.WinkelFragment"
+        android:label="fragment_winkel"
+        tools:layout="@layout/fragment_winkel" >
+        <action
+            android:id="@+id/action_navigation_Winkel_To_Mandje"
+            app:destination="@id/navigation_winkelmandje" />
+        <action
+            android:id="@+id/action_navigation_winkel_to_navigation_vestingen"
+            app:destination="@id/navigation_vestingen" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_winkelmandje"
+        android:name="be.ehb.koalaexpress.ui.Winkelmandje.WinkelMandjeFragment"
+        android:label="fragment_winkel_mandje"
+        tools:layout="@layout/fragment_winkel_mandje" />
+    <fragment
+        android:id="@+id/navigation_vestingen"
+        android:name="be.ehb.koalaexpress.ui.Vestingen.VestingenFragment"
+        android:label="fragment_vestingen"
+        tools:layout="@layout/fragment_vestingen" />
+</navigation>

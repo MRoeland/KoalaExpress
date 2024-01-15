@@ -1,0 +1,6 @@
+<!-- rounded_green_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/KoalaDarkGreen" /> <!-- Green color -->
+    <corners android:radius="50dp" /> <!-- Adjust the radius for rounded corners -->
+</shape>

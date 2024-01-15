@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_winkel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_food_bank_24"
+        android:title="Winkel" />
+    <item
+        android:id="@+id/navigation_winkelmandje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_add_shopping_cart_24"
+        android:title="Winkelmandje" />
+    <item
+        android:id="@+id/navigation_vestingen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_location_pin_24"
+        android:title="Locaties" />
+</menu>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/LoadingScreenActivity"
+    tools:context=".LoadingScreenActivity">
+
+    <ImageView
+        android:id="@+id/splashimgtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/splashimg"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="80dp"
+        android:scaleX="0.8"
+        android:scaleY="1.5"
+        android:src="@drawable/ic_koala_title" />
+
+    <ImageView
+        android:id="@+id/splashimg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:src="@drawable/ic_koala_logo2" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/splashimg"
+        android:layout_marginTop="50dp"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="#97D917"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/splashprogress"
+        />
+
+    <TextView
+        android:id="@+id/splash_infotxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="info"
+        android:textAlignment="center"
+        android:textColor="#97D917"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+</RelativeLayout>

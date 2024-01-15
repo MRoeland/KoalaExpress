@@ -1,0 +1,126 @@
+-- dbname= KoalaExpress
+-- creation of database scheme for KoalaExpress android app
+drop table ProductCategory;
+drop table Product;
+drop table Customers;
+drop table LocationsUren;
+drop table Locations;
+drop table OrderLines;
+drop table Orders;
+
+create or replace table Locations (
+  LocationId int auto_increment,
+  Name varchar(100),
+  Street varchar(250) not null,
+  Number int not null,
+  Additional varchar(50),
+  PostalCode varchar(20),
+  City varchar(100),
+  Country varchar(50),
+  PickUpInStore boolean default false,
+  Delivery boolean default false,
+  DeliveryMaxRangeKm int default 10,
+  FixedCostDelivery float default 0.0,
+  CostDeliveryPricePerKm float default 0.25,
+  primary key(LocationId),
+);
+
+create or replace table LocationsUren (
+  LocationId int auto_increment,
+  WeekDay int not null,
+  FromTime varchar(5),
+  ToTime varchar(5),
+  primary key(LocationId,WeekDay),
+  foreign key(LocationId)
+        references Locations(LocationId)
+);
+
+create or replace table Customers (
+  CustomerId int auto_increment,
+  First_Name varchar(100) not null,
+  Last_Name varchar(100) not null,
+  Login varchar(50) not null,
+  Password varchar(50) not null,
+  InvAdressline1 varchar(250) not null,
+  InvAdressline2 varchar(250) not null,
+  InvPostalCode varchar(20),
+  InvCity varchar(100),
+  InvProvince varchar(250) not null,
+  InvCountryCode varchar(2),
+  DelAdressline1 varchar(250) not null,
+  DelAdressline2 varchar(250) not null,
+  DelPostalCode varchar(20),
+  DelCity varchar(100),
+  DelProvince varchar(250) not null,
+  DelCountryCode varchar(2),
+  Email varchar(50),
+  Phone varchar(20),
+  primary key(CustomerId)
+);
+
+create or replace table ProductCategory (
+  CategoryId int auto_increment,
+  Name varchar(512) not null,
+  Description varchar(2000) not null,
+  SortOrder int not null,
+  primary key(CategoryId)
+);
+
+create or replace table Product (
+  CategoryId int,
+  ProductId int,
+  Name varchar(512) not null,
+  Description varchar(2000) not null,
+  Image varchar(500) not null,
+  Price float not null,
+  DetailedDescription varchar(1024),
+  Actie varchar(255),
+  primary key(CategoryId, ProductId),
+  foreign key(CategoryId)
+        references ProductCategory(CategoryId)
+);
+
+
+create or replace table Orders (
+  OrderId int not null,
+  CustomerId int,
+  ContactName varchar(200),
+  ContactEmail varchar(100),
+  ContactPhone varchar(20),
+  PickUpInStore boolean default false,
+  PickUpStoreId int,
+  PickupTimeFrom varchar(5),
+  PickupTimeUntil varchar(5),
+  DelAdressline1 varchar(250) not null,
+  DelAdressline2 varchar(250) not null,
+  DelPostalCode varchar(20),
+  DelCity varchar(100),
+  DelProvince varchar(250) not null,
+  DelCountryCode varchar(2),
+  DeliveryTime varchar(5),
+  ReductionCode varchar(100),
+  ReductionPrice float,
+  ProductPrice float,
+  TaxPrice float,
+  ShipCostPrice float,
+  TotalPrice float,
+  PayPalPaymentId varchar(500),
+  PayedOnDate datetime,
+  primary key(OrderId),
+  foreign key(CustomerId)
+        references Customers(CustomerId)
+);
+
+create or replace table OrderLines (
+  OrderId int not null,
+  LineId int not null,
+  CategoryId int,
+  ProductId int,
+  Quantity int,
+  UnitPrice float,
+  primary key(OrderId, LineId),
+  foreign key(OrderId)
+        references Orders(OrderId),
+  foreign key(CategoryId,ProductId)
+        references Product(CategoryId,ProductId)
+);

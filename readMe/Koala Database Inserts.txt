@@ -1,0 +1,218 @@
+INSERT INTO `Locations`(`LocationId`, `Street`, `Number`, `Additional`, `PostalCode`, `City`, `Country`, `PickUpInStore`, `Delivery`, `DeliveryMaxRangeKm`, `FixedCostDelivery`, `CostDeliveryPricePerKm`) 
+VALUES (1,'Rue de Fiennesstraat',1,'', '1070','Anderlecht','België',true,true,10.0,2.0,0.25);
+INSERT INTO `Locations`(`LocationId`, `Street`, `Number`, `Additional`, `PostalCode`, `City`, `Country`, `PickUpInStore`, `Delivery`, `DeliveryMaxRangeKm`, `FixedCostDelivery`, `CostDeliveryPricePerKm`) 
+VALUES (2,'Chau. de Ninove',225,'', '1080','Bruxelles','België',true,false,0.0,0.0,0.0);
+INSERT INTO `Locations`(`LocationId`, `Street`, `Number`, `Additional`, `PostalCode`, `City`, `Country`, `PickUpInStore`, `Delivery`, `DeliveryMaxRangeKm`, `FixedCostDelivery`, `CostDeliveryPricePerKm`) 
+VALUES (3,'Edingseweg',103,'', '9500','Geraardsbergsen','België',true,true,10.0,2.0,0.23);
+INSERT INTO `Locations`(`LocationId`, `Street`, `Number`, `Additional`, `PostalCode`, `City`, `Country`, `PickUpInStore`, `Delivery`, `DeliveryMaxRangeKm`, `FixedCostDelivery`, `CostDeliveryPricePerKm`) 
+VALUES (4,'Rue des Bouchers',34,'', '1000','Bruxelles','België',true,true,10.0,2.0,0.25);
+INSERT INTO `Locations`(`LocationId`, `Street`, `Number`, `Additional`, `PostalCode`, `City`, `Country`, `PickUpInStore`, `Delivery`, `DeliveryMaxRangeKm`, `FixedCostDelivery`, `CostDeliveryPricePerKm`) 
+VALUES (5,'Av. Marc Henri Van Laer',92,'', '1070','Anderlecht','België',true,true,5.0,2.0,0.25);
+
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (1,1,'16:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (1,2,'16:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (1,3,'16:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (1,4,'16:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (1,5,'16:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (1,6,'16:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (1,7,'16:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (2,1,'12:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (2,2,'12:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (2,3,'12:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (2,4,'12:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (2,5,'12:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (2,6,'12:00','23:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (2,7,'12:00','23:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (3,1,'11:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (3,2,'11:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (3,3,'11:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (3,4,'11:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (3,5,'11:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (3,6,'11:00','23:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (3,7,'11:00','23:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (4,1,'10:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (4,2,'10:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (4,3,'10:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (4,4,'10:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (4,5,'10:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (4,6,'10:00','23:45');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (4,7,'10:00','23:45');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (5,1,'09:00','21:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (5,2,'09:00','21:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (5,3,'09:00','19:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (5,4,'09:00','21:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (5,5,'09:00','21:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (5,6,'09:00','22:30');
+INSERT INTO `LocationsUren`(`LocationId`, `WeekDay`, `FromTime`, `ToTime`) VALUES (5,7,'09:00','22:30');
+
+
+INSERT INTO `Customers`(`CustomerId`, `First_Name`, `Last_Name`, `Login`, `Password`, `InvAdressline1`, `InvAdressline2`, `InvPostalCode`, `InvCity`, `InvProvince`, `InvCountryCode`, `DelAdressline1`, `DelAdressline2`, `DelPostalCode`, `DelCity`, `DelProvince`, `DelCountryCode`) 
+VALUES (1,'Matthias','Roeland','mroeland03','chickenmadras','Edingseweg 103','','9500','Geraardsbergen','Oost Vlaanderen','BE','Edingseweg 103','','9500','Geraardsbergen','Oost Vlaanderen','BE')
+INSERT INTO `Customers`(`CustomerId`, `First_Name`, `Last_Name`, `Login`, `Password`, `InvAdressline1`, `InvAdressline2`, `InvPostalCode`, `InvCity`, `InvProvince`, `InvCountryCode`, `DelAdressline1`, `DelAdressline2`, `DelPostalCode`, `DelCity`, `DelProvince`, `DelCountryCode`) 
+VALUES (2,'Robin','Roeland','rroeland03','chickenmadras','Zonnebloemstraat 25','','9500','Geraardsbergen','Oost Vlaanderen','BE','Zonnebloemstraat 25','','9500','Geraardsbergen','Oost Vlaanderen','BE')
+INSERT INTO `Customers`(`CustomerId`, `First_Name`, `Last_Name`, `Login`, `Password`, `InvAdressline1`, `InvAdressline2`, `InvPostalCode`, `InvCity`, `InvProvince`, `InvCountryCode`, `DelAdressline1`, `DelAdressline2`, `DelPostalCode`, `DelCity`, `DelProvince`, `DelCountryCode`) 
+VALUES (3,'Peggy','Van Lierder','pvanlierde03','chickenmadras','Zonnebloemstraat 25','','9500','Geraardsbergen','Oost Vlaanderen','BE','Zonnebloemstraat 25','','9500','Geraardsbergen','Oost Vlaanderen','BE')
+INSERT INTO `Customers`(`CustomerId`, `First_Name`, `Last_Name`, `Login`, `Password`, `InvAdressline1`, `InvAdressline2`, `InvPostalCode`, `InvCity`, `InvProvince`, `InvCountryCode`, `DelAdressline1`, `DelAdressline2`, `DelPostalCode`, `DelCity`, `DelProvince`, `DelCountryCode`) 
+VALUES (4,'Jurgen','Roeland','jroeland03','chickenmadras','Edingseweg 103','','9500','Geraardsbergen','Oost Vlaanderen','BE','Geraardsbergsesteenweg 91','','1570','Galmaarden','Vlaams Brabant','BE')
+INSERT INTO `Customers`(`CustomerId`, `First_Name`, `Last_Name`, `Login`, `Password`, `InvAdressline1`, `InvAdressline2`, `InvPostalCode`, `InvCity`, `InvProvince`, `InvCountryCode`, `DelAdressline1`, `DelAdressline2`, `DelPostalCode`, `DelCity`, `DelProvince`, `DelCountryCode`) 
+VALUES (5,'Ahmed','Ruftabeti','aruftabeti03','chickenmadras','Rue Ropsy Chaudron 61','','1070','Anderlecht','Brussels Hoofdstedelijk Gewest','BE','Rue Ropsy Chaudron 61','','1070','Anderlecht','Brussels Hoofdstedelijk Gewest','BE')
+
+INSERT INTO `ProductCategory`(`Name`, `Description`, `SortOrder`) VALUES ('Pizza','Heerlijke smulpizza met steeds de keuze tussen de soort van bodem.',1);
+INSERT INTO `ProductCategory`(`Name`, `Description`, `SortOrder`) VALUES ('Fingerfood','Kleine hapjes die prima passen bij je hoofdgerecht.',2);
+INSERT INTO `ProductCategory`(`Name`, `Description`, `SortOrder`) VALUES ('Desserts','Voor de kleine honger nadien.',3);
+INSERT INTO `ProductCategory`(`Name`, `Description`, `SortOrder`) VALUES ('Pasta','Voor wanneer het eens iets anders mag zijn dan pizza.',4);
+INSERT INTO `ProductCategory`(`Name`, `Description`, `SortOrder`) VALUES ('Dranken','Geen maaltijd is compleet zonder een drankje om het weg te spoelen.',5);
+
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (1,2,'Hawaii pizza ','Voor mensen zonder smaak, Tomatensaus, mozzarella, ham (kalkoen), ananas en extra mozzarella en knoflookolie op de rand.','',13.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (1,3,'East Side Shoarma pizza ','Tomatensaus, mozzarella, shoarma (100% kip), extra mozzarella. Met een swirl van knoflooksaus en knoflookolie op de rand.','',13.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (1,4,'BBQ Mixed Grill pizza','BBQ saus, mozzarella, rode ui, paprika, pepperoni, natural chicken, chorizo, gehakt en knoflookolie op de rand.','',14.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (1,5,'Italian Sausage & Pepperoni','Nieuw de Italian Sausage & Pepperoni pizza. Bestel nu bij New York Pizza en laat bezorgen of kom afhalen in een van onze vestigingen.','',7.99);
+
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,6,'Pesto Chicken pizza','Tomatensaus, mozzarella, rode ui, verse spinazie, verse knoflook, chicken en pesto swirl.','Pesto_Chicken_-9586.png',12.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,7,'BBQ Hot & Spicy pizza','Tomatensaus, mozzarella, rode ui, chicken, banana peppers, jalapeño peper, bbq swirl en knoflookolie op de rand.','bbq_hot_spicy-9587.png',11.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,8,'Green Veggie Delight','Voor de sukkels, Tomatensaus, mozzarella, rode ui, verse spinazie, verse knoflook, champignons, gorgonzola.','green_Veggie_delight_-9604.png',10.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,9,'Garlic Chicken & Spinach pizza','Crème fraîche, mozzarella, rode ui, verse spinazie, verse knoflook, chicken, parmezaan flakes.','Garlic_Chicken_Spinach_-9589.png',15.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,10,'Banana Pepper(oni) pizza','Tomatensaus, mozzarella, pepperoni, milde banana peppers en knoflookolie op de rand.','Banana_Pepperoni_-9590.png',13.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,11,'Caprese pizza','Tomatensaus, mozzarella, cherry tomaat, buffel mozzarella, swirl van pesto en knoflookolie op de rand.','Caprese-9592.png',14.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,12,'Zwarte Truffel pizza','Tomatensaus, mozzarella, champignons, parmezaan flakes, truffeltapenade, peterselie en knoflookolie op de rand.','Zwarte_Truffel_-9591.png',16.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,13,'Margherita pizza','Tomatensaus, mozzarella en met knoflookolie op de rand van de pizza.','Margherita-9585.png',11.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,14,'Margherita di Bufala','Tomatensaus, mozzarella, buffelmozzarella, parmezaan, oregano en knoflookolie op de rand.','Margherita_di_Buffalo_-9593.png',13.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,15,'4 Cheese pizza','Crème fraîche, mozzarella, cheddar, Goudse kaas en gorgonzola en knoflookolie op de rand.','4_cheese_-9594.png',15.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,16,'Hete kip pizza','Tomatensaus, mozzarella, rode ui, hete kip, sweet chili saus swirl en lente ui en knoflookolie op de rand.','hete_kip-9595.png',14.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,17,'BBQ Bacon & Chicken','BBQ-saus, mozzarella, rode ui, paprika, chicken, bacon (100% kip) swirl van bbq saus en knoflookolie op de rand.','BBQ_bacon_Chicken_-9597.png',15.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,18,'BBQ Meatlovers pizza','BBQ saus, chorizo, ham (kalkoen), pepperoni, mozzarella, peterselie en knoflookolie op de rand.','BBQ_meatlovers_-9596.png',16.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,19,'Pulled Chicken','Tomatensaus, mozzarella, rode ui, paprika, natural chicken en knoflookolie op de rand.','Pulled_chicken-9598.png',14.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,20,'Brooklyn Style pizza ','Tomatensaus, 3 soorten kaas, mozzarella, cheddar, Goudse en pepperoni. Met knoflookolie op de rand van de pizza.','Brooklyn_Style_Pizza_-9600.png',15.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,21,'Teriyaki Chicken pizza','BBQ saus, mozzarella, rode ui, broccoli, hete kip, teriyaki swirl, sesamzaadjes en knoflookolie op de rand.','Chicken_Teriyaki_-9602.png',15.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,22,'Salami pizza','New Yorker Basic pizza met tomatensaus, mozzarella, runder salami en knoflookolie op de rand.','salami_pizza-9606.png',13.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,23,'Downtown Döner pizza','Tomatensaus, mozzarella, rode ui, krokante döner (halal), knoflooksaus en knoflookolie op de rand.','Doner_pizza-9704.png',16.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,24,'Buffalo Chicken pizza','3 soorten kaas; cheddar, mozzarella en Goudse kaas, rode ui, chicken, peterselie, buffalo hotsauce swirl en cheddar kaas op de rand.','Buffalo_Chicken_Pizza_-9611.png',16.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,25,'Mexican Hot & Spicy pizza','Tomatensaus, mozzarella, jalapeño peper, pepperoni, rode ui en paprika. Met knoflookolie op de rand.','Mexican_Hot___Spicy_Pizza_-9612.png',15.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,26,'New York pizza','Tomatensaus, mozzarella, rode ui, paprika, ham (kalkoen), champignons, rundergehakt, olijven, pepperoni en extra niet te vreten ananas.','New_York_Pizza_-9613.png',16.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,27,'Californian Veggie pizza','Tomatensaus, mozzarella, rode ui, paprika, champignons, olijven en extra mozzarella. Met knoflookolie op de rand.','Californian_Veggie_Pizza_-9614.png',14.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,28,'Veggie Deluxe','Jukkie, deze is echt niet te vreten en willen we ook echt niet klaarmaken.','Veggie_deluxe_-9615.png',15.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,29,'Vegan Shoarma pizza','Tomatensaus, rode ui, vegan knoflook swirl, vegan kaas, vegan kip-shoarma met knoflook olie op de rand.','Vegan_Shoarma_-9617.png',15.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,30,'Tuna Treat pizza','Tomatensaus, mozzarella, tonijn (smelly fish), groene olijven, rode ui en knoflookolie op de rand.','Tuna_Treat_pizza_-9618.png',15.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(1,31,'Vegan Californian Veggie pizza','Tomatensaus, vegan kaas, rode ui, paprika, champignons en olijven en knoflookolie over de rand.','Vegan_Californian_Veggie-9616.png',14.99);
+
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,8,'Loaded Nachos Beef','Een nachoschotel met tomatensaus, rode ui, mozzarella, cheddar, Goudse kaas, gehakt, milde banana peppers en een swirl van sweet chilisaus.','Nachos_beef_-9624.png',8.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,9,'Loaded Nachos Veggie','Een nachoschotel met tomatensaus, rode ui, mozzarella, cheddar, Goudse kaas, milde banana peppers en een swirl van sweet chilisaus.','veggie_nachos_-9625.png',7.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,10,'Chicken Pops, 12 stuks','12 x stuks krokante kipballetjes met een gratis mayonaise, sweet chili-, barbecue- of knoflooksaus.','Chicken_Pops_-9626.png',5.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,11,'6 Crispy Nuggets','Chicken filet nuggets met gratis mayonaise, sweet chili-, barbecue- of knoflooksaus.','Nuggets-9628.png',5.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,12,'12 Crispy Nuggets','Chicken filet nuggets met gratis mayonaise, sweet chili-, barbecue- of knoflooksaus.','Nuggets-9629.png',9.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,13,'20 Crispy Nuggets','Chicken filet nuggets met gratis mayonaise, sweet chili-, barbecue- of knoflooksaus.','Nuggets-9630.png',14.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,14,'12 Buffalo Wings','Met mayonaise, sweet chili-, barbecue- of knoflooksaus.','Buffalo_Wings_-9632.png',15.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,15,'20 Buffalo Wings','Met mayonaise, sweet chili-, barbecue- of knoflooksaus.','Buffalo_Wings_-9633.png',15.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,16,'New York Hotdog','Hotdog omhuld met broodje van pizzadeeg en een cupje hotdog saus.','hot_dog_-9634.png',2.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,17,'New York Snackbox','Drie overheerlijke side dishes voor bij je pizza in 1 box! Garlic Bread, 6 Crispy Nuggets, 6 Buffalo Wings, sweet chili - en barbecuesaus.','snackbox-9635.png',12.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,18,'Sweet Chili Wings','6 Buffalo Wings gemarineerd in een overheerlijke Sweet Chili','sweet_chili_-9636.png',5.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,19,'Buffalo Wings Teriyaki Honey','Buffalo Wings gemarineerd in een heerlijke Japanse teriyaki honingsaus.','Buffalo_Wings_-9638.png',5.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,20,'Cheesy Bread','Krokant broodje met gesmolten mozzarella, Hollandse goudse en Engelse cheddar.','buffalo_wings_hot_sauce-9640.png',3.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,21,'Green Salad','Binnenkort bij wet verboden: Sla mix met cherry tomaatjes, Parmezaanse kaas en balsamico swirl.','Green_salad_-9641.png',5.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,22,'Mozzarella pizzaroll ','Pizzarolls gemaakt van ons eigen deeg met gesmolten mozzarella aan de binnenkant.','Mozzarella_pizzaroll_-9644.png',4.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,23,'Pepperoni pizzaroll','Pizzarolls gemaakt van ons eigen deeg met gesmolten mozzarella aan de binnenkant, pepperoni en knoflookolie.','Pepperoni_pizzaroll_-9645.png',4.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,24,'Potato Wedges','Aardappelpartjes met sweet chili-, barbecue- of knoflooksaus.','Potato_Wedges_-9646.png',3.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(2,25,'Losse sausjes ','Assortiment van mayonaise, barbecue-, knoflook- en sweet chilisaus.','losse_sausjes-7769.jpg',3.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(3,3,'Giant Chocolate Chip Cookie','Een giant American cookie met heerlijke stukjes melkchocolade.','New_York_Pizza_American_Chocolate_Cookie_-9696.png',2.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(3,4,'Triple Chocolate Cookie','Chocoladekoekje met heerlijke stukjes witte, pure en melkchocolade.','triple-9701.png',2.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(3,5,'New York Sweetbox ','Box met 1 x cinnamon bread, 10 x poffertjes, 1 x giant chocolate chip cookie en 1 x chocolate lava cake.','NY_sweetbox_-9657.png',10.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(3,6,'Cinnamon Bread','Vers broodje met kaneelsuiker en romige suiker-dip. Heerlijk voor na de pizza.','Cinnamon_Bread_-9658.png',3.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(3,7,'Poffertjes','10 x Hollandse poffertjes bedekt met een laagje poedersuiker en een beetje boter.','Poffertjes_-9656.png',3.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(3,8,'Chocolate Lava Cake','Chocolade cakeje gevuld met gesmolten chocolade.','lava_cake_-9659.png',3.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(3,9,'','','',15.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(3,9,'','','',15.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(3,9,'','','',15.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES 
+(3,9,'','','',15.49);
+
+
+
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (2,1,'Crispy Chicken Tenders','2 stuks licht pittige kipfilet stukken zonder bot voorzien van een krokante buitenkant.','',3.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (2,2,'Classic Chicken Box','Drie overheerlijke kip producten voor bij je pizza in 1 box! 6 Crispy Nuggets, 2 Crispy Chicken Tenders (licht pittig), 6 Buffalo Wings, sweet chili - en barbecuesaus.','',13.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (2,3,'Crispy Chicken Box','Drie overheerlijke kip producten voor bij je pizza in 1 box! 6 Crispy Nuggets, 2 Crispy Chicken Tenders (licht pittig), 12 Chicken Pops, sweet chili - en barbecuesaus.','',13.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (2,4,'Loaded Nachos Chicken','Een nachoschotel met tomatensaus, rode ui, mozzarella, cheddar, Goudse kaas, chicken, milde bananapeppers, lente ui en een swirl sweet chilisaus.','',8.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (2,5,'Garlic Bread','Knoflookbroodje met kruidenboter, kaas en verse knoflook.','',2.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (2,6,'6 Buffalo Wings','Met sweet chili-, barbecue-, mayonaise of knoflooksaus.','',5.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (2,7,'Bacon pizzaroll ','Pizzarolls gemaakt van ons eigen deeg met gesmolten mozzarella aan de binnenkant, bacon (100% kip) en knoflookolie.','',4.99);
+
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (3,1,'Petit Chocolademousse','Luxe kleine chocomousse van melk- en pure chocolade.','',1.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (3,2,'Magnum Double Starchaser','Fluweelzacht popcorn roomijs met toffeesaus en krakende Magnum chocolade met een knapperige maïs en fudge topping.','',8.99);
+
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (5,1,'Coca-Cola Zero','Een nieuwe verbeterde smaak en een naam die alle twijfels wegneemt: Coca-Cola zero sugar. Deze nieuwste variant lijkt meer op en smaakt meer als Coca-Cola, maar dan zonder suiker en zonder calorieën.','',2.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (5,2,'Coca-Cola','Deze originele, iconische, heerlijke frisdrank verfrist mensen op ieder moment, overal ter wereld.','',2.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (5,3,'Fanta','Fanta orange is een lekkere combinatie van sinaasappelsmaak met sprankelend water, dat voor een krachtige fruitsmaak zorgt.','',2.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (5,4,'Lipton Ice Tea Sparkling','Laat je verfrissen door onze klassieker met bubbels. De lekkerste, laag in calorieën.','',2.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (5,5,'Lipton Ice Tea Green','Laat je verrassen door de verfrissende smaak van Lipton Ice Tea Green. Zonder bubbels, laag in calorieën. Indien statiegeld van toepassing is, wordt deze in de prijs verwerkt.','',2.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (5,6,'Chaudfontaine','Door zijn zuiverheid en evenwichtige mineraalgehalte bezit Chaudfontaine Natuurlijk Mineraalwater een unieke, zachte smaak','',2.29);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (5,7,'Chaudfontaine bruisend','Chaudfontain bruisend natuurlijk mineraalwater. Na een reis van meer dan 60 jaar door verschillende aardlagen in de Ardennen is dit zuivere water door de natuur gefilterd. ','',2.29);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (5,8,'Jupiler','Kenmerken door de frisse en fruitige aroma, de licht bittere smaak en de fraaie heldere kleur.','',2.79);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (5,9,'Moretti','Moretti is een authentiek subtiel bitter en fris bier met een delicate moutsmaak. ','',3.49);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (5,10,'Wijn','Rode, witte of rose wijn. Geen alcohol onder < 18. Wij controleren legitimatie bij aflevering. Let op! Door dit product te bestellen, geef je aan dat je ouder bent dan 18 jaar.','',8.99);
+ 
+ 
+
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (4,1,'Koala Lasagne','Lasagne met bolognesesaus, rundergehakt, plakjes deeg, mozzarella, cherrytomaten en oregano.','',11.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (4,2,'Cannelloni','Cannelloni met spinazie ricotta-vulling','',11.99);
+INSERT INTO `Product`(`CategoryId`, `ProductId`, `Name`, `Description`, `Image`, `Price`) VALUES (4,3,'Kaas en Hesp','Paste met kaassaus en ham','',12.99);
+
+
+
+test servlets api calls:
+http://localhost:8080/KoalaExpressServer/locations?action=listLocations
+http://localhost:8080/KoalaExpressServer/products?action=listCategories
+http://localhost:8080/KoalaExpressServer/products?action=listProducts
+http://localhost:8080/KoalaExpressServer/customers?action=login&login=jroeland03&password=chickenmadras
+http://localhost:8080/KoalaExpressServer/orders?action=storeOrder&payload=<JSONOBJSTRORDER met lines>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/KoalaDetailGray"
+    app:cardCornerRadius="40dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp">
+        <TextView
+            android:id="@+id/txt_nameItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            tools:text="Product Item naam" />
+        <RelativeLayout
+            android:id="@+id/layoutImageEnDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/txt_nameItem">
+            <ImageView
+                android:id="@+id/imageItem"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:srcCompat="@mipmap/ic_no_image" />
+            <TextView
+                android:id="@+id/txt_itemDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/imageItem"
+                android:layout_marginLeft="16dp"
+                android:layout_alignParentLeft="true"
+                tools:text="Item description"
+                android:textSize="12sp"
+                />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/txt_itemDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_below="@id/layoutImageEnDescription"
+
+            android:layout_alignParentLeft="true"
+            tools:text="Item detail"
+            android:textSize="12sp"
+            />
+        <Button
+            android:id="@+id/btn_detaildlg_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/txt_itemDetail"
+            android:layout_marginRight="16dp"
+            android:backgroundTint="@color/KoalaYellowButton"
+            android:text="Ok"
+            android:textColor="@color/black"
+            android:textColorLink="@color/KoalaYellowButton" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

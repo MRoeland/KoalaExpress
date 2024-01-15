@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitCenter"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_koala_logo_t50" />
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Titel"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginStart="12dp"
+        android:layout_toRightOf="@id/imageView"/>
+    <TextView
+        android:id="@+id/tvaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#000000"
+        android:text="adreslijn"
+        android:layout_marginStart="12dp"
+        android:layout_below="@id/titleTextView"
+        android:layout_toRightOf="@id/imageView"/>
+    <ImageView
+        android:id="@+id/imageViewtakeaway"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/imageView"
+        android:src="@drawable/koala_takeaway" />
+    <ImageView
+        android:id="@+id/imageViewdeliver"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="fitCenter"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/imageViewtakeaway"
+        android:layout_below="@id/imageView"
+        android:src="@drawable/koala_bezorgen" />
+    <TextView
+        android:id="@+id/openingsurenTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="Openingsuren: "
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_below="@id/tvaddress"
+        android:textColor="#666666" />
+
+</RelativeLayout>

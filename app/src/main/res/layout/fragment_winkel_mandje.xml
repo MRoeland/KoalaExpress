@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_winkelmandje"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/frameLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Winkelmandje.WinkelMandjeFragment">
+
+    <TextView
+        android:id="@+id/tv_Bestelling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_titel_bestelling"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:textColor="@color/KoalaDarkGreen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/cardLogin"
+        layout="@layout/card_user_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_Bestelling" />
+
+    <include
+        android:id="@+id/cardVestiging"
+        layout="@layout/card_kies_vestiging"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/cardLogin" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBasketItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="128dp"
+        android:minHeight="400dp"
+        app:layout_constraintTop_toBottomOf="@id/cardVestiging"/>
+    <TextView
+        android:id="@+id/tv_NogNietsBesteld"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="400dp"
+        android:text="Je hebt nog niets besteld"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="128dp"
+        app:layout_constraintTop_toBottomOf="@id/cardVestiging" />
+    <include
+        android:id="@+id/cardTotalPrice"
+        layout="@layout/card_total_checkout_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rvBasketItems" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

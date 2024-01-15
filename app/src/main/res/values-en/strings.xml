@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KoalaExpress</string>
+    <string name="title_home">Shop</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="hello_blank_fragment">Hello black fragment</string>
+    <string name="str_val_add_btn">Add</string>
+    <string name="str_product_name">Product name</string>
+    <string name="str_titel_bestelling">Uw Koala Bestelling</string>
+    <string name="str_totaal_prijs">Te betalen</string>
+    <string name="str_Betalen">Afrekenen</string>
+    <string name="str_login_title">Hoe kunnen we je bereiken?</string>
+    <string name="str_Wissen">Wissen</string>
+</resources>

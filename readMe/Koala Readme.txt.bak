@@ -1,0 +1,178 @@
+Readme voor eindwerk project Android
+
+Clientside: 
+	- android java project KoalaExpress
+serverside API: 
+	- webservlets via tomcat server op synology NAS thuis 
+			base address in browser : "http://91.181.60.26:7070/KoalaExpressServer" of "http://jurnas.synology.me:7070/KoalaExpressServer").
+			vb : http://91.181.60.26:7070/KoalaExpressServer/products?action=listCategories
+			Tomcat gui website administratie voor deploy: http://91.181.60.26:7070/manager/html
+			username : tomcat   password: secret
+	- MariaDB v 10.3.32 op synology NAS ("http://91.181.60.26/phpmyadmin" "http://jurnas.synology.me/phpmyadmin") 
+			username : koala   password : Chickenmadras1@
+			dependency voor mysql connector op basis van JDBC : https://mvnrepository.com/artifact/mysql/mysql-connector-java
+	- Image Store online
+			op website jursairplanefactory.com/koalaimg folder
+			vb : www.jursairplanefactory.com/koalaimg/hawaii-9605.png
+			
+Accounts:
+	- KoalaExpress App 
+			vb user : mroeland03 	password : chickenmadras
+			   user : aruftabeti03   password : chickenmadras
+				 
+	- Paypal Sandbox accounts voor business account en personal account (zie class PayPalConfig)
+			paypal sandbox api key : PAYPAL_CLIENT_ID : AbF7alF2K8rKrxodK4PZaYjqwCv6dFjjq9lhploKLDmMAb6vrr12YcTLTu0taiUkIvSepB2aJFyFdhce
+			paypal sandbox api secret key : PAYPAL_SECRET_KEY1 : EDv_Vpd_IbiAg0tg_LpKHoWowxZGWkT8VwLgjetqls-3uIJN2yia3uq8TXnzxS5AUhHQvxOmaNwtt9ae
+			paypal dashboard developer : https://developer.paypal.com  -> login to dashboard
+
+	- Google Maps API  ( zie manifest.xml )
+			API_KEY : AIzaSyAOOsra2hLUCeNQ-0N9jZKmbKIajXQ0k70
+			Beheer van Google Maps Platform: https://console.cloud.google.com/google/maps-apis/api-list?project=koalaexpressapp
+			
+
+Info sources:
+ 
+- paypal rest api:
+	- eerst geprobeerd met braintree sdk. dit bleek niet meer gesupporteerd in latere versies van android
+	      https://stackoverflow.com/questions/67200260/paypal-sdk-integration-with-android-login-failed
+	- verder gezocht naar huidige versie en rest api gevonden
+		 gevonden via en stappen gevolgd van : https://lo-victoria.com/the-complete-guide-to-integrate-paypal-in-mobile-apps
+		 verdere info over order en inhoud: https://developer.paypal.com/docs/api/orders/v2/#orders_create
+		 
+		 hoe gebruik van die api volgens stappen in lo-victory.com site
+			er wordt gebruikt gemaakt van custom tab browser (CCT) voor de redirect naar paypal
+			er zijn een aantal web api calls na mekaar (access token halen, create order, checkout order)
+			eerste een token ophalen, algemeen in globals,bijgehouden in datarepository. wordt opgehaald als blank anders zelfde behouden
+				een token is een soort van sessie id die heel de tijd herhaalt wordt
+			dan een order maken en naar paypal sturen
+			response van create order zijn een aantal href links die door paypal teruggestuurd worden, hieruit nemen we de "approve" blok link en roepen die url in href aan
+			dit opent het paypal inlog deel via CCT (custom tab browser)
+			een deeplink brengt je terug van confirmation naar de payment confirmation in de android app 
+			een deep link is een link die een url omleidt naar een intent en je app opent -> hangt vast aan activity declaratie in manifest.xml bij activity .CheckoutActivity
+			zie android manifest.xml en de link als return URL in de app (dit werkte alleen met eigen scheme voor de url, niet met http)
+			de finale confirmation and checkoutorder call naar paypal uit de checkoutactivity
+			op einde gaat terug naar mainactivity en springt naar het winkelmandje bij start via een Intent string parameter
+		verificatie accounts in paypal : kijken naar accounts en balans https://developer.paypal.com/dashboard/accounts
+				mail controleren van ontvangen of verstuurd in sandbox accounts via: https://developer.paypal.com/dashboard/notifications
+
+
+- hoe starten van activity met start parameters
+	https://stuff.mit.edu/afs/sipb/project/android/docs/training/basics/firstapp/starting-activity.html  -> zie onderaan pagina
+	
+- hoe image laden via een URL online
+		https://stackoverflow.com/questions/18953632/how-to-set-image-from-url-for-imageview
+		dit uitgebreid met local opslaan op device na inladen online
+		als op device gevonden laden van device en niet opnieuw ophalen (class : Task_ImageLoad en LocalFileOperations)
+		
+- how to make a reusable dialog class : 
+	https://www.linkedin.com/learning/android-development-tips/create-a-reusable-dialog-class
+	layout maken, afleiden van DialogFragment
+
+- het maken van een custom switchbutton voor afhalen/bezorgen knop bij vestigingen dialoog
+	https://www.youtube.com/watch?v=q1-ur7p2Bks
+	https://www.youtube.com/watch?v=NIU-jZfJNnY
+	https://stackoverflow.com/questions/23358822/how-to-custom-switch-button
+	https://www.youtube.com/watch?v=5xMPLe1gnOA
+
+- een bestaande layout gebruiken als deel van een ander layout file: include (gebruikt in WinkelmandjeFragment)
+	https://stackoverflow.com/questions/5632114/how-to-include-layout-inside-layout
+
+- hoe een jpg file toevoegen aan lokale resource file en gebruiken in imageview
+	https://www.youtube.com/watch?v=Y7JTkXoN8OE
+
+- how to use searchview om te filteren op product categorie in winkel scherm
+	https://abhiandroid.com/ui/searchview#gsc.tab=0
+	(https://www.youtube.com/watch?v=Qb2DN4h61yg)
+	
+- search icon on right side in searchview: 
+	https://stackoverflow.com/questions/36905036/how-to-move-searchview-s-search-icon-to-the-right-side
+	
+- how to get color object from resource colors
+	https://stackoverflow.com/questions/30547049/android-get-color-object-from-resource
+	
+- probleem dat bij switch van checkoutactivity naar mainactivity en springen naar winkelmandjefragment heeft probleem dat je niet meer terug naar eerste winkel scherm kan springen :
+	(laatste deel van deze pagina heeft het over setStartDestination van een navgraph om elders te starten
+	https://developer.android.com/guide/navigation/use-graph/programmatic
+
+- gebruik van asynctask en duidelijke uitleg van de parameters <input, progress, resultaat> achter de asynctask template, zie tekening
+	https://itecnote.com/tecnote/android-okhttp-async-calls-asynctask-or-okhttp-async-api/
+	
+- gebruik van asynctask om api okhttpclient calls te doen :
+	https://blog.fossasia.org/receiving-data-from-the-network-asynchronously/
+
+- asynctask: onpostexecute in main gui thread en onbackground in achtergrond thread ( zie answer 9 en 5 in link )
+	https://stackoverflow.com/questions/50252205/why-is-asynctask-working-on-the-main-thread
+	
+- gebruiken van enum in de loadingscreen om status bij te houden van de voortgang
+	https://www.javatpoint.com/enum-in-java
+
+- hoe een latlng coordinaat voor google maps vinden op basis van een adres dat opgeslagen is bij location in db (vestigingen) -> Geocoder google api class en getFromLocationName(adres).
+	https://www.youtube.com/watch?v=bBF2AkwPYtQ
+
+- dialog maken met dialog fragment:
+	https://www.geeksforgeeks.org/dialogfragment-in-android/
+	https://www.youtube.com/watch?v=oNl1pndO-I4
+
+- loading screen tijdens laden van repository en maken offline room db (automatisch naar mainactivity als klaar en check status met een automatische timer)
+	how to start an activity automatically from an activity after a task completes. youtube : "Automatically Change Activity after Few Seconds | Tutorial"
+	gebruik van timer object en switch activity : https://www.youtube.com/watch?v=2JGm67leD7g
+
+	
+- serverside servlets maken met tomcat en httpservlet versies:
+	servlets en tomcat: https://www.youtube.com/watch?v=7TOmdDJc14s   (introduction to servlets)
+ 	https://tomcat.apache.org/tomcat-7.0-doc/servletapi/javax/servlet/http/HttpServlet.html   (referentie httpservlet)
+	https://www3.ntu.edu.sg/home/ehchua/programming/howto/tomcat_howto.html  (install tomcat http server en voorbeeld van httpservlet class "HelloServlet"
+	https://jakarta.ee/specifications/servlet/6.0/apidocs/jakarta.servlet/jakarta/servlet/http/httpservlet
+
+- use json in servlet om resultaat door te geven in response en algemeen over json en servlets
+	https://www.youtube.com/watch?v=KFkN8akuEoQ
+
+- jackson JSON bibliotheek gebruiken , hoe een json string terug omzetten tot een class met jackson
+	https://www.youtube.com/watch?v=LsiYA3MIAcs
+
+- schrijven JSON van object naar string 
+	https://www.youtube.com/watch?v=pJbvqguVb8c
+
+- hoe een string doorgeven in url met speciale characters -> URLEncoder en URLDecoder
+	https://www.urlencoder.io/java/
+	https://www.urldecoder.io/java/
+	
+- hoe connecteren aan een mariadb database in java: mysqldatasource	connection
+	https://www.javaguides.net/2018/10/jdbc-datasource-connection-mysql-example.html
+	voorbeelden van queries:
+	https://www.javaguides.net/2018/10/jdbc-statement-interface.html
+	voorbeeld van query met doorgeven van een parameter om te zoeken
+	https://www.javaguides.net/2018/10/jdbc-preparedstatement-select-records-example.html
+	
+
+vragen aan chatgpt:
+chatgpt:
+- google api
+	"i am writing an android java app using google map api. i want to use markers with a custom image, can you write an example"
+	"how to add extended info to a marker"
+	"can I add a custom info window to the marker"
+
+- dialog fragment pass arguments
+	"i am writing an android java app. if I am using a dialogfragment which i"m starting from the main activity. can I pass arguments to this dialog ?"
+	-> result use bundle
+
+- dialog transparent frame maken om de witte hoeken achter rounded corners van de dialog weg te doen (logindialog, infodialog) :
+	"i have a cardview in a layout for a dialogfragment with rounded corners on the cardview. how can i make the background of the dialog transparent ?"
+	oplossing style maken in styles.xml en setStyle in oncreate van dialogfragment
+
+- order items toevoegen aan een paypal order bij request order:
+	veel knoeien met de juiste structuur door te sturen naar paypal voor aanmaak van het order. wou orderlijnen ook toevoegen aan paypal orderlijnen
+	"i am writing an android java app and making a paypal transation using the paypal api. to request my order I am making the content using the following code to identify the order. How can I add detailed items to this 
+	request which will contain each individual ordered item and it^'s quantity and price. (+reeds bestande json code)"
+	
+	later probleem dat totaal amount niet gelijk aan order item totaal, na lang zoeken gevonden dat reduction amount moet meegeven als je breakdown doet van total price in total items en reduction
+	"android java app, making a paypal transation using the paypal api. to request my order I need to pass reduction value on the order price in the order object. (+reeds bestande json code)"
+
+- android java app. i'm making a layout as defined below. I would like to programmatically attach the rv_WinkelItems recyclerview below the searchview when clicking on the hourglass icon of the searchview and when closing 
+  the searchview, programmatically attach it to the bottom of the rv_Winkelcategories. how can i do this. + layout winkelfragment pasted
+	(om winkel item recycler top te verplaatsen naar bottom of searchview, of bottom of categories recycler)
+	antwoord -> gebruik van ConstraintSet, clone van fragmentwinkel constraint layout, nieuwe connect, en apply aanroepen bij onclose en onsearchclick
+
+
+
+

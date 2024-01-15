@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="2dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginRight="2dp"
+    android:layout_marginBottom="2dp"
+    android:backgroundTint="@color/KoalaItemGray"
+    android:paddingLeft="3dp"
+    android:paddingRight="3dp"
+    app:cardCornerRadius="15dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp">
+
+        <ImageView
+            android:id="@+id/imageItem"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            app:srcCompat="@mipmap/ic_no_image" />
+
+        <TextView
+            android:id="@+id/txt_nameItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/imageItem"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            tools:text="Item naam" />
+
+        <TextView
+            android:id="@+id/txt_itemDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/imageItem"
+            android:layout_below="@id/txt_nameItem"
+            tools:text="Item description"
+            android:textSize="12sp"
+            />
+
+        <Button
+            android:id="@+id/btn_addToBasket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/imageItem"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="-20dp"
+            android:backgroundTint="@color/KoalaYellowButton"
+            android:text="@string/str_val_add_btn"
+            app:cornerRadius="6dp"
+            android:textColor="@color/black"
+            android:textColorLink="@color/KoalaYellowButton" />
+
+        <TextView
+            android:id="@+id/etAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_alignBottom="@id/btn_addToBasket"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="11dp"
+            android:layout_toLeftOf="@id/btn_addToBasket"
+            android:textColor="@color/white"
+            android:text="8"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:background="@drawable/textview_background_itemaantal"
+            android:ems="2"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/btn_addToBasket"
+            android:layout_marginBottom="3dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            tools:text="Prijs: 0000000"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
