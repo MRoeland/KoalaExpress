@@ -1,5 +1,8 @@
 Readme voor eindwerk project Android
 
+Het is belangrijk om de applicatie te draaien met telefoon en niet via de emulator.
+er is internet access nodig op de emulator en dat gaat soms mis. de emulator internet toegang is soms te traag.
+
 Clientside: 
 	- android java project KoalaExpress
 serverside API: 
@@ -176,11 +179,51 @@ chatgpt:
 
 
 
-
-
 Extra uitleg:
 
+Over de opbouw van de app:
+
+Er is een data bibliotheek en er zijn 3 fragmenten met elk hun viewmodel
+
+- een winkel fragment waar je de artikelen kan kiezen en toevoegen aan je mandje
+- een winkelmandje fragment dat het mandje laat zien en toelaat vestiging te kiezen waar je wil afhalen of laten leveren, wie je bent en een korting ingeven.
+	de kortingen zijn hard gecodeerd maar kunnen later ook uit de databank komen. de waarden die je kan kiezen nu zijn "k10", "k5" voor percent korting en v5 voor vaste 5euro
+- een vestiging fragment dat de locaties van de winkels laat zien maar deze heeft verder geen link relatie met het mandje.
+
+elke fragment heeft een model.
+
+omdat ik alle data op 1 plaats wou inlezen en bijhouden heb ik een singleton object gemaakt waar alle data opgeslagen is en van waaruit alle oproepen om data op te halen
+van verschillende plaatsen staat (online via api of lokaal uit roomdb). het repository object noemt KoalaDataRepository. hierin zit ook het winkelmandje, de ingelogde klant en de
+geselecteerde vestiging en alle gelezen data uit de databank.
+al deze objecten zijn mutablelivedata zodat je vanuit de fragmenten een observer kan maken. zodra de inhoud verandert van zo een object wordt een observer functie aangeroepen
+zodat de fragement opnieuw kan tekenen. ook product categorieen en producten zijn live objecten. 
+de repository wordt in bijna elk scherm gebruikt om aan de data te komen die nodig is om af te beelden.
+ik heb zoveel mogelijk geprobeerd om de functies die eigen zijn aan de pure data in de data repository te houden.
+ophalen van data bvb, inlezen online of van de room db. dat gaat met async task objecten en omdat je niet weet wanneer die klaar zijn is het handig om met die observers een melding
+te krijgen dat een object gewijzigd is.
+
+Voor het online ophalen van de gegevens gebruik ik een api dit ik gemaakt heb met intelliJ en die draait op een tomcat server op een NAS.
+De klassen aan de server kant zijn afgeleid van httpwebservlet en tomcat zorgt ervoor dat als je de url oproept met een bepaald servletnaam, de juiste klasse gestart wordt.
+ik geeft dan ook nog een parameter "action" mee om binnen een servlet meerdere functie te kunnen maken.
+er zijn servlets voor "products", "customers", "orders" en "versions" (om online check te doen).
+op de server kant gaat elke functie een connectie maken naar de databank en met een select de gegevens ophalen uit een mysql mariadb.
+ik maak daar dezelfde objecten aan als in de app en geeft ze dan met omzetten naar json string door aan de response url.
+alle servlets geven data terug. alleen orders laat toe om het winkelmandje op te sturen en op te slaan.
+elke servlet geeft een JSON string terug die gemaakt is op basis van een ReturnMessage object. 
+elke boodschap die terugkomt is een "ReturnMessage" en heeft een "resultHeader" die een boolean succes/failure heeft en een errormessage/boodschap en een string veld Content.
+bij het uitschrijven uit de servlet schrijft hij eerst de json van de header, dan is er een | teken en daarachter staat de inhoud van wat je terug wil sturen.
+ik heb een klasse gemaakt in de app voor alles wat met json te maken heeft waar ik veel gebruikte functie in gestopt heb (JSonhelper)
+als ik een resultaat terugkrijg van een servlet in de app maak ik een objectmapper (jackson JSON dependency) 
+ bij elke return neem ik de s = (response.body().string()); en laat die omzetten in een returnMessage msg = JSONhelper.extractmsgFromJSONAnswer(s);
+ dit deelt eerst het resultaat op het | teken. het eerste deel zet ik om met json naar een resultHeader en zet de rest vcan de boodschap in "content".
+ als er succes was in de header neem ik daarna de content en zet die met objectmapper om naar de class die ik terug krijg. (meestal is dat een list object zoals ProductCategoryList, ProductList, CustomerList, LocationList...)
+ pas op het einde van het lezen en omzetten in OnPostExcecute van de asynctask taak zet ik de data uiteindelijk in de repository data.
+
+
+
+
 LoadingScreenActivity: 
+
 De loading screen activity is toegevoegd om de tijd te overbruggen van het inladen van de data en wegschrijven naar lokale room DB vooraleer naar het winkelscherm te gaan.
 De manier waarop het werkt is dat er meerdere statussen zijn die een flow volgen.
 de flow is afhankelijk van de online check status.
